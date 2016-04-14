@@ -1,0 +1,24 @@
+{
+    "name": "async-client",
+    "version": "1.0.0",
+    "description": "NodeJS library to send or receive async messages (independently of the technology (redis, activemq))",
+    "main": "index.js",
+    "scripts": {},
+    "bugs": {
+        "url": "https://github.com/Vizzuality/async-client-nodejs/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Vizzuality/async-client-nodejs.git"
+    },
+    "author": "Raúl Requero <raul.requero@vizzuality.com>",
+    "license": "MIT",
+    "dependencies": {
+        "amqp": "0.2.4",
+        "debug": "2.2.0",
+        "redis": "2.6.0-1"
+    },
+    "devDependencies": {
+        "co": "^4.6.0"
+    }
+}

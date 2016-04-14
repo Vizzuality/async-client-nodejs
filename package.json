@@ -14,7 +14,6 @@
     "author": "Raúl Requero <raul.requero@vizzuality.com>",
     "license": "MIT",
     "dependencies": {
-        "amqp": "0.2.4",
         "debug": "2.2.0",
         "redis": "2.6.0-1"
     },

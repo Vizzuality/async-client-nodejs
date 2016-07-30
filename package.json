@@ -1,5 +1,5 @@
 {
-    "name": "async-client",
+    "name": "vizz.async-client",
     "version": "1.0.0",
     "description": "NodeJS library to send or receive async messages (independently of the technology (redis, activemq))",
     "main": "index.js",

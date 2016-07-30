@@ -5,7 +5,7 @@ Now only support to Redis. In the future we'll add support to amqp protocol.
 ## Install
 
 ````
-npm install --save https://github.com/Vizzuality/async-client-nodejs.git
+npm install --save vizz.async-client-nodejs
 ````
 
 ## Use

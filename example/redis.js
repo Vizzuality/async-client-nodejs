@@ -1,30 +1,29 @@
-'use strict';
 const CHANNEL = 'myChannel';
 
 function* iter(number) {
-    for (var i = 0; i < number; i++) {
+    for (let i = 0; i < number; i++) {
         yield i;
     }
 }
 
 function* gen(number) {
-    for (var val of iter(number)) {
+    for (const val of iter(number)) {
         console.log(val);
     }
 }
 
-var AsyncClient = require('../index');
+const AsyncClient = require('../index');
 
-var asyncClientPublish = new AsyncClient(AsyncClient.REDIS, {
+const asyncClientPublish = new AsyncClient(AsyncClient.REDIS, {
     host: 'localhost'
 });
-var asyncClientSubscriber = new AsyncClient(AsyncClient.REDIS, {
+const asyncClientSubscriber = new AsyncClient(AsyncClient.REDIS, {
     host: 'localhost'
 });
 
-var channelSubscribe = asyncClientSubscriber.toChannel(CHANNEL);
-channelSubscribe.on('message', function*(channel, message) {
-    console.log('Message received: ' + message);
+const channelSubscribe = asyncClientSubscriber.toChannel(CHANNEL);
+channelSubscribe.on('message', function* (channel, message) {
+    console.log(`Message received: ${message}`);
     yield gen(message);
     console.log('Message completed');
 });

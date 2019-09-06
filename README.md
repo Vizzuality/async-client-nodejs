@@ -1,6 +1,6 @@
 # Publish / Subscribe Client (Support to generators)
 
-Now only support to Redis. In the future we'll add support to amqp protocol.
+Now only support to Redis. In the future we may add support for the AMQP protocol.
 
 ## Install
 
@@ -9,10 +9,12 @@ npm install --save vizz.async-client-nodejs
 ````
 
 ## Use
-You have examples in ``examples`` folder. To execute example: ```node example/redis.js```
+
+You have examples in ``examples`` folder. To execute example: ```npm run example```
 
 Code:
-````
+
+```
 'use strict';
 const CHANNEL = 'myChannel';
 
@@ -39,13 +41,13 @@ var asyncClientSubscriber = new AsyncClient(AsyncClient.REDIS, {
 
 var channelSubscribe = asyncClientSubscriber.toChannel(CHANNEL);
 channelSubscribe.on('message', function*(channel, message) {
-    console.log('Message received: ' + message);
-    yield gen(message);
-    console.log('Message completed');
+                                   console.log('Message received: ' + message);
+                                   yield gen(message);
+                                   console.log('Message completed');
 });
 channelSubscribe.subscribe();
 
 asyncClientPublish.toChannel(CHANNEL).emit(2);
 asyncClientPublish.toChannel(CHANNEL).emit(5);
 
-````
+```
